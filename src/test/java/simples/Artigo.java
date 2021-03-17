@@ -38,7 +38,9 @@ public class Artigo {
     public void consultarArtigo(){
         driver.get(url);//Abrir o site
         driver.findElement(By.id("searchInput")).sendKeys("Ovo de Páscoa"); // pesquisar por "Ovo de Páscoa"
-        driver.findElement(By.id("searchButton")).click();// clica na lupa
+        //driver.findElement(By.id("searchButton")).click();// clica na lupa
+        driver.findElement(By.cssSelector("button.wvui-button")).click();
+
         //assertEquals("Ovo de Páscoa ? Wikipédia, a enciclopédia livre", driver.getTitle());//Validar o titulo
 
         assertTrue(driver.getTitle().contains("Ovo de Páscoa"));
